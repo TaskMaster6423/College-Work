@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Image</title>
+    <style>
+        .navigation-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navigation-button {
+            width: 120px;
+            height: 40px;
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: #fff;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .navigation-button:hover {
+            background: linear-gradient(45deg, #2c3e50, #34495e);
+            transform: scale(1.05);
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="../commoncss.css"> -->
+</head>
+
+<body>
+    <div id="image-container"></div>
+    <div class="navigation-buttons">
+        <button class="navigation-button" onclick="prevImage()">Previous</button>
+        <button class="navigation-button" onclick="nextImage()">Next</button>
+    </div>
+
+    <script>
+        var folder = localStorage.getItem('folder');
+        var images = [
+            'images/cars-images/' + folder + '/image1.jpeg',
+            'images/cars-images/' + folder + '/image2.jpeg',
+            'images/cars-images/' + folder + '/image3.jpeg',
+            'images/cars-images/' + folder + '/image4.jpeg',
+            'images/cars-images/' + folder + '/image5.jpeg',
+            'images/cars-images/' + folder + '/image6.jpeg',
+            'images/cars-images/' + folder + '/image7.jpeg',
+            'images/cars-images/' + folder + '/image8.jpeg',
+            'images/cars-images/' + folder + '/image9.jpeg'
+        ]; // Add more image URLs as needed
+        var currentIndex = images.indexOf(localStorage.getItem('selectedImage'));
+
+        function showImage(imageSrc) {
+            document.getElementById('image-container').innerHTML = '<img src="' + imageSrc + '" alt="Selected Image" width="70%" height="70%" " />';
+        }
+
+        showImage(images[currentIndex]);
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(images[currentIndex]);
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(images[currentIndex]);
+        }
+    </script>
+</body>
+
+</html>

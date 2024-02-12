@@ -3,41 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Program and Notes</title>
+    <title>Image Gallery</title>
     <link rel="stylesheet" href="../commoncss.css">
 </head>
 <body>
-    <header>
-        <h2>car types</h2>
-    </header>
-    <div class="image-display">
-        <a class="program-button javaallprogram subtle-background big-image" target="_self" href="../images/convertable/image1.jpeg">
-            <img src="../images/microcar/image1.jpeg" alt="image 1">
-        </a>
-        <a class="program-button javaallprogram subtle-background big-image" target="_self" href="../images/convertable/image2.jpeg">
-            <img src="../images/microcar/image2.jpeg" alt="image 2">
-        </a>
-        <a class="program-button javaallprogram subtle-background big-image" target="_self" href="../images/convertable/image3.jpeg">
-            <img src="../images/microcar/image3.jpeg" alt="image 3">
-        </a>
-        <a class="program-button javaallprogram subtle-background big-image" target="_self" href="../images/convertable/image4.jpeg">
-            <img src="../images/microcar/image4.jpeg" alt="image 4">
-        </a>
-        <a class="program-button javaallprogram subtle-background big-image" target="_self" href="../images/convertable/image5.jpeg">
-            <img src="../images/microcar/image5.jpeg" alt="image 5">
-        </a>
-        <a class="program-button javaallprogram subtle-background big-image" target="_self" href="../images/convertable/image6.jpeg">
-            <img src="../images/microcar/image6.jpeg" alt="image 6">
-        </a>
-        <a class="program-button javaallprogram subtle-background big-image" target="_self" href="../images/convertable/image7.jpeg">
-            <img src="../images/microcar/image7.jpeg" alt="image 7">
-        </a>
-        <a class="program-button javaallprogram subtle-background big-image" target="_self" href="../images/convertable/image8.jpeg">
-            <img src="../images/microcar/image8.jpeg" alt="image 8">
-        </a>
-        <a class="program-button javaallprogram subtle-background big-image" target="_self" href="../images/convertable/image9.jpeg">
-            <img src="../images/microcar/image9.jpeg" alt="image 9">
-        </a>
+    <div class="image-container">
+        <img src="images/cars-images/microcar/image1.jpeg" alt="Image 1" onclick="showImage('images/cars-images/microcar/image1.jpeg')" />
+        <img src="images/cars-images/microcar/image2.jpeg" alt="Image 2" onclick="showImage('images/cars-images/microcar/image2.jpeg')" />
+        <img src="images/cars-images/microcar/image3.jpeg" alt="Image 3" onclick="showImage('images/cars-images/microcar/image3.jpeg')" />
+        <img src="images/cars-images/microcar/image4.jpeg" alt="Image 4" onclick="showImage('images/cars-images/microcar/image4.jpeg')" />
+        <img src="images/cars-images/microcar/image5.jpeg" alt="Image 5" onclick="showImage('images/cars-images/microcar/image5.jpeg')" />
+        <img src="images/cars-images/microcar/image6.jpeg" alt="Image 6" onclick="showImage('images/cars-images/microcar/image6.jpeg')" />
+        <img src="images/cars-images/microcar/image7.jpeg" alt="Image 7" onclick="showImage('images/cars-images/microcar/image7.jpeg')" />
+        <img src="images/cars-images/microcar/image8.jpeg" alt="Image 8" onclick="showImage('images/cars-images/microcar/image8.jpeg')" />
+        <img src="images/cars-images/microcar/image9.jpeg" alt="Image 9" onclick="showImage('images/cars-images/microcar/image9.jpeg')" />
+        <!-- Add more image elements as needed -->
     </div>
-    </body>
-    </html>
+
+    <script>
+        function showImage(imageSrc) {
+            localStorage.setItem('selectedImage', imageSrc);
+            localStorage.setItem('folder', 'microcar');
+            window.location.href = 'view.html';
+        }
+    </script>
+</body>
+</html>
